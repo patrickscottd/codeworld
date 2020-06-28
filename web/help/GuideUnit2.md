@@ -173,9 +173,9 @@ ringOf(pic) = rotated(translated(pic, 5, 0),  60) &
               rotated(translated(pic, 5, 0), 360)
 ~~~~~
 
-The name `pic` is given to the parameter to `ringOf`.  When `ringOf` is used in
-the definition of `program`, it must be given a parameter, with a specific picture
-to substitute for occurrences of the parameter `pic`.
+The name `pic` is given to the argument of `ringOf`.  When `ringOf` is used in
+the definition of `program`, it must be given an argument, with a specific picture
+to substitute for occurrences of the argument `pic`.
 
 !!! collapsible: What other function could you write to simplify this code?
     Any time you see the same code written many times, you should think of it
@@ -249,7 +249,7 @@ eye(color) = solidCircle(1/3) &
 
 This is a general pattern.  (Remember the implied "for any value of `color`..."
 at the beginning.)  To decide which specific picture is meant by `eye(blue)`,
-substitute the specific value you are interested in where ever the placeholder
+substitute the specific value you are interested in wherever the placeholder
 appears.  One specific instance of this equation is this.
 
 ~~~~~
@@ -318,7 +318,7 @@ c = f(3, black)
 To use functions more effectively, then, it helps to know techniques for
 rewriting expressions so that they look different, but have the same
 value.  You can apply these techniques to write a wider variety of different
-pictures
+pictures.
 
 Equivalent expressions
 ----------------------
@@ -328,7 +328,7 @@ For example, you can write the number 6 as just `6`, or as `6 + 0`, or
 `2 * 3`, or `6 * 1`, or even `3 * 3 - 3`.  When it comes to expressions that
 describe pictures, you may be less familiar with how to easily move and
 add and drop transformations and such.  In this section, you'll see more
-some examples of different ways to rewrite expressions to have the same
+examples of different ways to rewrite expressions to have the same
 values.
 
 The examples here are mostly about pictures, but the ideas come up again
@@ -585,7 +585,7 @@ dilated(pic, k) = scaled(pic, k, k)
 ~~~~~
 
 ~~~~~
-dilaled(pic, -1) = rotated(pic, 180)
+dilated(pic, -1) = rotated(pic, 180)
 ~~~~~
 
 ~~~~~
@@ -678,29 +678,134 @@ on arguments.
 Plumbing
 --------
 
-(This section remains to be written.)
+Once you've written programs where you have defined your own functions, you'll 
+need to go back through and make sure that every function has an argument, and 
+those arguments will give the correct results, in order for your program to run  
+correctly.  The computer understands the language, if it's written correctly.
+
+Determining the right code to write comes over time with practice.
+
+This process is called **plumbing** because you're making sure that everything 
+flows together smoothly, like the plumbing in your house.  The pipes in your house
+are connected in such a way that the water takes the easiest and most efficient 
+path out of your house.  If everything is connected together correctly, you 
+should have a fully functioning and efficient set of pipes.
+
+It is the same with your program.  The arguments must match the functions you 
+designate for them.  Then all you'll need to do is insert the value for 
+whatever argument it is you need, and you can reuse
+The process will flow 
+As you build up skills, you'll be able to notice places where you can be creative 
+with the functions you make, by combining.  
+
+Think of plumbing as a form of proofreading, where you follow the process from the
+program, to correct functions and
 
 Calculating with arguments
 ==========================
 
-(This section remains to be written.)
+Figuring out the correct arguments are the key to well-defined functions.
+
+You can adjust your function to match the arguments you want. If you want
+
+Here is an outline of 2 different approaches or methods that you can use to aid
+you in writing the correct code for your designated program.  Again, you'll be 
+working from specific examples to general patterns
 
 Tracking arithmetic
 -------------------
 
-(This section remains to be written.)
+**Tracking arithmetic** is a 3 step process that you can use to help build
+some intuition into the abstraction that is needed to define functions and choosing
+the correct types of arguments.
+
+Working from a specific instance to writing a general expression for your
+arguments
+
+Step 1: Write a program for something slightly complicated that you want 
+to see, and use numbers for your arguments that make it straightforward 
+to recognize where each number comes from by referring to the picture.
+
+In this program, the outline of a ghost is formed with a circle and
+a rectangle. We can worry about the eyes later.
+
+Notice that the 
+program = drawingOf(ghost(6, 9) & coordinatePlane)
+
+--- TRACKING ARITHMETIC
+
+-- ghost(5, 8) = translated(solidRectangle(5.5, 5), 0, -1.25)
+--                & translated(solidCircle(2.5), 0, 1.5)
+
+ghost(5, 8) = translated(solidRectangle(5, 8 - 5/2), -8/2 + (8 - 5 / 2) / 2, 0)
+               & translated(solidCircle(5/2), 0, 8/2 - 5/2)
+
+ghost(w, h) = translated(solidRectangle(w - h/2, h), -w/2 + (w - h / 2) / 2, 0)
+               & translated(solidCircle(h/2), w/2 - h/2, 0)
+
+
+
+Perhaps a rectangle with height 5.5 and width 5. Half the height is 2 and half 
+the width is 3 and a circle with a radius of 2.5. You ca
+
+Step 2: Pick uncommon numbers as inputs, numbers that are unlikely to 
+turn up later in any calculation of arguments and determine
+Not only will the numbers you choose be uncommon, but also the forms you
+will be putting them into might strike you.
+This is similar to the process you saw before of equivalent forms, but more
+abstract and harder to understand at first. You'll be picking expressions for the 
+numbers that make sense in your code and are also equivalent to the numbers that
+
+Show them that they are doing less than they already have
+a height of 13 or a width of 7
+13/2 or 17/2 - 1
+These numbers should be bigger than 5
+"efuse to let the numbers be absorbed"
+The code  hre arithmetic because it's now made from expresions made from 
+several numbers, not just a single number
+Here you must overcome the urge to simplify any expressions
+Basically, just refuse to do any arithmetic and leave these expressions in
+this new form
+This is the step where you will be doing most of the work, figuring out
+These should match up with the individual widths and heights of your figures.
+This will make the process of Step 3 much easier, as you'll just be replacing
+specific numbers with the specific arguments that they refer to in your 
+picture
+
+Why choose these numbers? It is because they match the height/width minus
+the radius
+
+Step 3: Further abstraction to the individual arguments of the 
+
+Consider this code:
 
 Intermediate results
 --------------------
 
-(This section remains to be written.)
+A second approach to building up coding skills is a technique called 
+**intermediate results**. You use intermediate results when you think 
+you know what you want to compute, but you don't have the vocabulary to
+
+In some sense, using the technique of intermediate results is the backwards
+of that of tracking arithmetic. They 
+
+ghost2(w, h) = pic
+  where pic = translated(body, casex, 0) & translated(head, tipx, 0)
+        body = solidRectangle(casew, h)
+        head = solidCircle(headr)
+        leftedge = -w / 2
+        rightedge = w / 2
+        casex = leftedge + undefined
+        tipx = undefined
+        casew = undefined
+        tipr = undefined
 
 Conditional functions
 =====================
 
 All of the functions defined so far have basically the same form regardless of
 their parameters.  Sometimes, you may want the definition to follow a different
-form depending on the parameters.  In this case, you need a conditional
+form depending on the arguments.  In this case, you need a conditional
 function.
 
 To write a conditional function, instead of one equal sign and a right-hand
