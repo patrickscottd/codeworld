@@ -677,18 +677,28 @@ on arguments.
 
 Plumbing
 --------
-**Plumbing** is the process of adding extra arguments as they are needed to route 
-values from the equations where they are originally in scope to any other of the 
-equations they will be needed. It is an inherent step in the Top Down Design method
-you learned about in Unit 1.
 
-In Top Down Design, you start with the big picture and work your way down to the
-details, so as to not overwhelm yourself. You divide it up into several digestible
-chunks, then further subdivide those chunks and so on, until you've defined 
-everything in your program
+**Plumbing** is the process of adding extra arguments, as they are needed, in 
+your program, and routing them from the equations where they are originally in scope 
+to any of the other equations they will be needed. Plumbing is getting the pipeline
+of your program in order, so that it flows smoothly.The key idea behind plumbing is 
+to get the right information to the relevant places in your program, and to make sure 
+that the right arguments get passed on to where they are needed elsewhere in the program.
+ 
+It is an inherent step in the Top Down Design method you learned about in Unit 1.
+In Top Down Design, you started with the big picture and worked your way down to the
+specifics, so as to understand the details of the program's components and what 
+each part needs. It's also helps keeping you from getting overwhelmed with every 
+detail at the beginning. You fill the details in in time.
 
-The key idea behind plumbing is that the values get passed on to where they are 
-needed
+Plumbing is one part of the process of filling in those details. It is reserved for 
+the middle levels of heirarchical decomposition
+
+You divide your program up into several digestible chunks, then further subdivide 
+those chunks and so on, until you've laid out the outline of everything in your 
+program. Then you work in reverse, defining the relevant functions and variables
+one step at a time
+
 
 Once you've written programs where you have defined your own functions, you'll 
 need to go back through and make sure that every function has an argument, and 
