@@ -688,22 +688,29 @@ that the right arguments get passed on to where they are needed elsewhere in the
 It is an inherent step in the Top Down Design method you learned about in Unit 1.
 In Top Down Design, you started with the big picture and worked your way down to the
 specifics, so as to understand the details of the program's components and what 
-each part needs. It's also helps keeping you from getting overwhelmed with every 
-detail at the beginning. You fill the details in in time.
+each part needs. It also helped to keep you from getting overwhelmed with every detail
+at the beginning. 
 
-Plumbing is one part of the process of filling in those details. It is reserved for 
-the middle levels of heirarchical decomposition
+With Top Down Design, you end up with a lot of undefined variables that stop you from 
+running your program. The first thing to do is to define these variables, and once you 
+have your variables set, you can just work backward and start defining them and filling 
+in the details as you go, giving the program form.
 
-You divide your program up into several digestible chunks, then further subdivide 
-those chunks and so on, until you've laid out the outline of everything in your 
-program. Then you work in reverse, defining the relevant functions and variables
-one step at a time
+Plumbing is just one part of the process of filling in those details. Defining functions 
+and arguments for the individual variables is the first step to filling in the details.
+Then, you'll need to know the other places you will use the arguments you defined in your 
+functions, so that everything ties together in a coherent way and the correct values are
+passed through to all the right functions.
 
-
-Once you've written programs where you have defined your own functions, you'll 
-need to go back through and make sure that every function has an argument, and 
-those arguments will give the correct results, in order for your program to run  
-correctly. 
+Say you want to make a picture of 3 flowers. With Top Down Design, we would start with
+1 bare flower, unadorned and undefined. 
+Next, we then divide it down into its constituent parts, its petal and stem.
+Start with the stem. We want it to be a thin solid rectangle, with a width of 1 and a 
+height of 4, and we want its color to be green.
+So, we would write the variable stem and set it equal to the function 
+colored(solidRectangle(1, 4), green)
+We need 3 flowers and 3 petals, but it will help us to just define 1 petal as a function
+and adjust the argument
 
     program   = drawingOf(scene)
     scene     = flower(blue) & flower(pink) & flower(yellow)
@@ -711,11 +718,6 @@ correctly.
     petal(c)  = colored(circle(2), c)
     stem      = colored(rectangle(1, 4), green)     
 
-This process is called **plumbing** because you're making sure that everything 
-flows together smoothly, like the plumbing in your house.  The pipes in your house
-are connected in such a way that the water takes the easiest and most efficient 
-path out of your house.  If everything is connected together correctly, you 
-should have a fully functioning and efficient set of pipes.
 
 It is the same with your program.  The arguments must match the functions you 
 designate for them.  Then all you'll need to do is insert the value for 
