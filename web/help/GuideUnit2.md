@@ -677,13 +677,29 @@ on arguments.
 
 Plumbing
 --------
+**Plumbing** is the process of adding extra arguments as they are needed to route 
+values from the equations where they are originally in scope to any other of the 
+equations they will be needed. It is an inherent step in the Top Down Design method
+you learned about in Unit 1.
+
+In Top Down Design, you start with the big picture and work your way down to the
+details, so as to not overwhelm yourself. You divide it up into several digestible
+chunks, then further subdivide those chunks and so on, until you've defined 
+everything in your program
+
+The key idea behind plumbing is that the values get passed on to where they are 
+needed
 
 Once you've written programs where you have defined your own functions, you'll 
 need to go back through and make sure that every function has an argument, and 
 those arguments will give the correct results, in order for your program to run  
-correctly.  The computer understands the language, if it's written correctly.
+correctly. 
 
-Determining the right code to write comes over time with practice.
+    program   = drawingOf(scene)
+    scene     = flower(blue) & flower(pink) & flower(yellow)
+    flower(c) = petal(c) & stem
+    petal(c)  = colored(circle(2), c)
+    stem      = colored(rectangle(1, 4), green)     
 
 This process is called **plumbing** because you're making sure that everything 
 flows together smoothly, like the plumbing in your house.  The pipes in your house
@@ -698,8 +714,7 @@ The process will flow
 As you build up skills, you'll be able to notice places where you can be creative 
 with the functions you make, by combining.  
 
-Think of plumbing as a form of proofreading, where you follow the process from the
-program, to correct functions and
+
 
 Calculating with arguments
 ==========================
